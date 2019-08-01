@@ -1,0 +1,264 @@
+/ --------- Questions -----------//
+
+.questions-wrapper {
+
+	.content-standard-wrapper {
+		margin: 30px auto;
+
+		.media-query(@760, {
+			margin: 35px auto;
+		});
+
+		.media-query(@1280, {
+			margin: 42px auto;
+		});
+
+		.leasing-program,
+		.avail-program,
+		.rent-program,
+		.pet-program,
+		.furnish-program,
+		.room-program,
+		.question-program {
+			border: 1px solid #E6E6E6;
+			border-bottom: 0;
+			padding: 10px;
+
+			.media-query(@760, {
+				padding: 10px 20px;			
+			});
+
+			&:last-child {
+				border-bottom: 1px solid #E6E6E6;
+			}
+
+			.icon {
+				&:before {
+					content: '+';
+					color: @base-color;
+					font-size: 22px;
+					font-weight: 700;
+					position: relative;
+					padding-right: 5px;
+
+					.media-query(@760, {
+						padding-right: 10px;
+					});
+				}
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+
+			.selected {
+				.icon {
+					&:before {
+						content: '-';
+						font-size: 23px;
+						padding-right: 9px;
+
+						.media-query(@760, {
+							padding-right: 15px;
+						});
+					}
+				}
+			}
+		}
+
+		.leasing-info,
+		.avail-info,
+		.rent-info,
+		.pet-info,
+		.furnish-info,
+		.room-info,
+		.question-info {
+			margin: 10px 0 0 0;
+			overflow: hidden;
+
+			.media-query(@760, {
+				margin: 10px 0 0 25px;		
+			});
+
+			p {
+				margin: 0;
+
+				.media-query(@760, {
+					padding: 20px 0;
+				});
+
+				.media-query(@1280, {
+					padding: 25px 0 32px;
+				});
+			}
+		}
+
+		.leasing-wrapper,
+		.availability-wrapper,
+		.rent-wrapper,
+		.pet-wrapper,
+		.furnish-wrapper,
+		.room-wrapper,
+		.question-wrapper {
+			margin-bottom: 40px;
+
+			.media-query(@760, {
+				margin-bottom: 60px;
+			});
+		}
+
+		.events-title {
+			border-bottom: 2px solid @base-color;
+			.font-size(18,0);
+			.line-height(22,18);
+			font-family: @body-font;
+			font-weight: 700;
+			padding: 0 0 15px 0;
+			transform: none;
+
+			.media-query(@760, {
+				.font-size(20,0);
+				.line-height(25,20);
+			});
+
+			.media-query(@1280, {
+				.font-size(28,0);
+				.line-height(32,28);
+			});
+		}
+
+		h4 {
+			display: inline-block;
+			font-family: @body-font;
+			font-weight: 700;
+			.font-size(16,0);
+			.line-height(20,16);
+			margin: 0;
+
+			.media-query(@760, {
+				.font-size(18,0);
+				.line-height(22,18);
+			});
+
+			.media-query(@1280, {
+				.font-size(21,0);
+				.line-height(25,21);
+			});
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	.question-content-wrapper {
+		background: @base-color;
+		clear: both;
+		padding: 10px 20px;
+
+		.media-query(@760, {
+			height: 70px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 10px 30px;
+		});
+
+		.media-query(@1280, {
+			height: 90px;
+			padding: 20px 40px;
+		});
+
+		h2 {
+			color: #fff;
+			.font-size(30,0);
+			font-family: @headline-font;
+			.line-height(45,30);
+
+			.media-query(@760, {
+				.font-size(38,0);
+				.line-height(54,38);
+			});
+
+			.media-query(@1280, {
+				.font-size(48,0);
+				.line-height(64,48);
+			});
+		}
+
+		.top-wrapper {
+			.dropdown-wrapper {
+				width: 260px;
+				height: 50px;
+				background: #fff;
+				position: relative;
+
+				.media-query(@760, {
+					width: 368px;
+				});
+
+				.toggle-dropdown,
+				.category-text {
+					background: #fff;
+					border: 0;
+					color: #808080;
+					.font-size(14,0);
+					.line-height(18,14);
+
+					.media-query(@760, {
+						.font-size(16,0);
+						.line-height(20,16);
+					});
+
+					.media-query(@1280, {
+						.font-size(18,0);
+						.line-height(28,18);
+					});
+				}
+
+				.questions-nav {
+					display: none;
+					position: relative;
+					top: 50px;
+					-webkit-box-shadow: 0px 2px 5px 0px rgba(156,154,156,1);
+					-moz-box-shadow: 0px 2px 5px 0px rgba(156,154,156,1);
+					box-shadow: 0px 2px 5px 0px rgba(156,154,156,1);
+
+					&.show {
+						display: block;
+					}
+				}
+
+				.category-text {
+					width: 100%;
+					border: 1px solid rgba(0,0,0,0.1);
+					padding-left: 16px;
+					line-height: 37px;
+					display: block;
+					text-align: left;
+				}
+
+				.toggle-dropdown {
+					width: 100%;
+					position: absolute;
+					padding: 0 0 0 16px;
+					line-height: 50px;
+					text-align: left;
+					z-index: 2;
+
+					&:after {
+						width: 50px;
+						height: 50px;
+						background: @accent-color-1;
+						color: #fff;
+						content: "▼";
+						line-height: 50px;
+                        position: absolute;
+    					right: 0;
+    					text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
